@@ -1,8 +1,6 @@
-package com.tutorial.util;
+package com.spring.tutorial.springcoredemo.common;
 
 import org.springframework.stereotype.Component;
-
-import com.spring.tutorial.springcoredemo.rest.Coach;
 
 @Component // Component annotation is used to register this class as a bean in the spring container. 
 // Makes it available for autowiring (dependency Injection).
