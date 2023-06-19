@@ -11,12 +11,21 @@ import com.spring.tutorial.springcoredemo.common.Coach;
 public class DemoController {
     
     private Coach myCoach;
+    private Coach anotherCoach;
 
     // Constructor Injection
     @Autowired
-    public DemoController(@Qualifier("swimCoach") Coach theCoach) {
+    public DemoController(
+        @Qualifier("swimCoach") Coach theCoach,
+        @Qualifier("swimCoach") Coach theAnotherCoach) {
         System.out.println("In Controller: " + getClass().getSimpleName());
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
+    }
+
+    @GetMapping("/scopes")
+    public String scopeCheck() {
+        return "Compare Beans : myCoach == antoherCoach : " + (myCoach == anotherCoach);
     }
     
     @GetMapping("/dailyworkout")
