@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // new Object instance for each injection
+// @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // new Object instance for each injection
 public class SwimCoach implements Coach{
 
     public SwimCoach() {
