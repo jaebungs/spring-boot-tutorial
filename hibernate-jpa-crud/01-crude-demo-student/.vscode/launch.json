@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CrudedemoApplication<crudedemo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "come.fun.code.crudedemo.CrudedemoApplication",
+            "projectName": "crudedemo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
