@@ -2,6 +2,7 @@ package come.fun.code.crudedemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
@@ -19,9 +20,19 @@ public class CrudedemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) { // inject StudentDAO
 		return runner -> { // Java Lamda expression
 			// createMultipleStudents(studentDAO);
-
-			readStudent(studentDAO);
+			// readStudent(studentDAO);
+			queryForStudent(studentDAO);
 		};
+	}
+
+	private void queryForStudent(StudentDAO studentDAO) {
+		// get a list of students
+		List<Student> theStudents = studentDAO.findAll();
+		
+		// display students
+		for (Student student : theStudents) {
+			System.out.println(student);
+		}
 	}
 
 	private void readStudent(StudentDAO studentDAO) {
