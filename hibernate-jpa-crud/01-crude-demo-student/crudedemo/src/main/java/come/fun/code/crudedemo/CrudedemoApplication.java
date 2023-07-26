@@ -21,8 +21,19 @@ public class CrudedemoApplication {
 		return runner -> { // Java Lamda expression
 			// createMultipleStudents(studentDAO);
 			// readStudent(studentDAO);
-			queryForStudent(studentDAO);
+			// queryForStudent(studentDAO);
+			queryForStudentByLastName(studentDAO);
 		};
+	}
+
+	private void queryForStudentByLastName(StudentDAO studentDAO) {
+		List<Student> theStudents = studentDAO.findByLastName("Hawk");
+
+		// display students
+		for (Student student : theStudents) {
+			System.out.println(student);
+		}
+
 	}
 
 	private void queryForStudent(StudentDAO studentDAO) {
@@ -48,9 +59,9 @@ public class CrudedemoApplication {
 
 	// Create students
 	private void createMultipleStudents(StudentDAO studentDAO) {
-		Student tempStudent1 = new Student("Mark", "Hawk", "Mark@gmailc.om");
-		Student tempStudent2 = new Student("Marry", "Cat", "Marry@gmailc.om");
-		Student tempStudent3 = new Student("William", "Dog", "William@gmailc.om");
+		Student tempStudent1 = new Student("Aark", "Hawk", "Mark@gmailc.om");
+		Student tempStudent2 = new Student("Barry", "Cat", "Marry@gmailc.om");
+		Student tempStudent3 = new Student("Dilliam", "Dog", "William@gmailc.om");
 		
 		studentDAO.save(tempStudent1);
 		studentDAO.save(tempStudent2);
