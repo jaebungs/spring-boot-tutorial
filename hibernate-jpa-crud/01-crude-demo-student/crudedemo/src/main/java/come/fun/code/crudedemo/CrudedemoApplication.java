@@ -19,13 +19,13 @@ public class CrudedemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) { // inject StudentDAO
 		return runner -> { // Java Lamda expression
-			// createMultipleStudents(studentDAO);
+			createMultipleStudents(studentDAO);
 			// readStudent(studentDAO);
 			// queryForStudent(studentDAO);
 			// queryForStudentByLastName(studentDAO);
 			// updateStudent(studentDAO);
 			// deleteStudent(studentDAO);
-			deleteAllStudents(studentDAO);
+			// deleteAllStudents(studentDAO);
 		};
 	}
 
@@ -62,9 +62,9 @@ public class CrudedemoApplication {
 
 	// Create students
 	private void createMultipleStudents(StudentDAO studentDAO) {
-		Student tempStudent1 = new Student("Aark", "Hawk", "Mark@gmailc.om");
-		Student tempStudent2 = new Student("Barry", "Cat", "Marry@gmailc.om");
-		Student tempStudent3 = new Student("Dilliam", "Dog", "William@gmailc.om");
+		Student tempStudent1 = new Student("Molly", "Mong", "Mong@gmailc.om");
+		Student tempStudent2 = new Student("Blue", "Moon", "Blue@gmailc.om");
+		Student tempStudent3 = new Student("Ace", "Monkey", "Ace@gmailc.om");
 		
 		studentDAO.save(tempStudent1);
 		studentDAO.save(tempStudent2);
